@@ -65,6 +65,10 @@ set scrolloff=2
 set sidescrolloff=5
 set nojoinspaces
 
+" Preview for fzf using bat, which works on Windows
+command! -bang -nargs=? -complete=dir Files
+	\ call fzf#vim#files(<q-args>, {'options': ['--preview', 'bat --style=numbers --color=always --pager=never {}']}, <bang>0)
+
 " ===============================================
 " Recommended for coc.nvim
 " ===============================================

@@ -1,3 +1,5 @@
+let mapleader = "\<Space>"
+
 " ===============================================
 " Plugins
 " ===============================================
@@ -68,6 +70,16 @@ set nojoinspaces
 " Preview for fzf using bat, which works on Windows
 command! -bang -nargs=? -complete=dir Files
 	\ call fzf#vim#files(<q-args>, {'options': ['--preview', 'bat --style=numbers --color=always --pager=never {}']}, <bang>0)
+
+" Shortcut for opening files
+map <C-p> :Files<CR>
+nmap <leader>; :Buffers<CR>
+
+" Save file
+nmap <leader>w :w<CR>
+
+" Toggle whitespace
+nmap <leader>l :set list!<CR>
 
 " ===============================================
 " Recommended for coc.nvim

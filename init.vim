@@ -2,18 +2,19 @@
 " Plugins
 " ===============================================
 call plug#begin()
+Plug 'editorconfig/editorconfig-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " ===============================================
 " Shell
 " ===============================================
-if has("win32")
-	set shell=cmd.exe
-	set shellcmdflag=/c\ powershell.exe\ -NoLogo\ -NoProfile\ -NonInteractive
-	set shellpipe=|
-	set shellredir=>
-endif
+"if has("win32")
+"	set shell=cmd.exe
+"	set shellcmdflag=/c\ powershell.exe\ -NoLogo\ -NoProfile\ -NonInteractive
+"	set shellpipe=|
+"	set shellredir=>
+"endif
 
 " ===============================================
 " Neovim default settings (:help nvim-defaults)

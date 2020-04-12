@@ -90,6 +90,8 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 

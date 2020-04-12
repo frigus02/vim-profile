@@ -81,6 +81,18 @@ nmap <leader>w :w<CR>
 " Toggle whitespace
 nmap <leader>l :set list!<CR>
 
+" Jump to start and end of line using the home row keys
+map H ^
+map L $
+
+" No arrow keys (force myself to use the home row)
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 " ===============================================
 " Recommended for coc.nvim
 " ===============================================

@@ -11,6 +11,12 @@ cd %LOCALAPPDATA%
 mklink /D nvim C:\code\vim-profile
 ```
 
+Install dependencies:
+
+```
+scoop install bat
+```
+
 ## Initial configuration
 
 - Install plugins (vim-plug):

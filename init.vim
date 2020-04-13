@@ -66,6 +66,8 @@ set hidden
 set scrolloff=2
 set sidescrolloff=5
 set nojoinspaces
+set relativenumber
+set number
 
 " Preview for fzf using bat, which works on Windows
 command! -bang -nargs=? -complete=dir Files

@@ -68,6 +68,12 @@ set sidescrolloff=5
 set nojoinspaces
 set relativenumber
 set number
+let g:netrw_banner=0
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_liststyle=3
+let g:netrw_list_hide=netrw_gitignore#Hide()
+let g:netrw_list_hide.='\(^\|\s\s\)\zs\.\S\+'
 
 " Preview for fzf using bat, which works on Windows
 command! -bang -nargs=? -complete=dir Files

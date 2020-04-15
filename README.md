@@ -2,6 +2,20 @@
 
 ## Installation
 
+### macOS
+
+Symlink config directory (assuming the repository is cloned at `$HOME/Projects/vim-profile`):
+
+```sh
+ln -s "$HOME/Projects/vim-profile" "$HOME/.config/nvim"
+```
+
+Install dependencies:
+
+```sh
+brew install bat node
+```
+
 ### Windows
 
 Start `cmd` as Administrator and run (assuming the repository is cloned at `C:\code\vim-profile`):

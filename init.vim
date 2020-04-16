@@ -8,6 +8,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " ===============================================
@@ -63,6 +64,7 @@ set wildoptions=pum,tagfile
 set listchars=tab:▸\ ,space:·
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 set hidden
+set noshowmode
 set scrolloff=2
 set sidescrolloff=5
 set nojoinspaces

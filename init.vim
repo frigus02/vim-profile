@@ -9,17 +9,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
+Plug 'joshdick/onedark.vim'
 call plug#end()
-
-" ===============================================
-" Shell
-" ===============================================
-"if has("win32")
-"	set shell=cmd.exe
-"	set shellcmdflag=/c\ powershell.exe\ -NoLogo\ -NoProfile\ -NonInteractive
-"	set shellpipe=|
-"	set shellredir=>
-"endif
 
 " ===============================================
 " Neovim default settings (:help nvim-defaults)
@@ -61,6 +52,7 @@ set wildoptions=pum,tagfile
 " ===============================================
 " Editor settings
 " ===============================================
+colorscheme onedark
 set listchars=tab:▸\ ,space:·
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 set hidden
@@ -103,6 +95,9 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Lightline config
+let g:lightline={'colorscheme': 'onedark'}
 
 " ===============================================
 " Recommended for coc.nvim
@@ -187,6 +182,3 @@ nmap <leader>qf <Plug>(coc-fix-current)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
-
-" Add (Neo)Vim's native statusline support.
-"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}

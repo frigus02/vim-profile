@@ -76,11 +76,10 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.='\(^\|\s\s\)\zs\.\S\+'
 
 " Preview for fzf using bat, which works on Windows
-command! -bang -nargs=? -complete=dir Files
-	\ call fzf#vim#files(<q-args>, {'options': ['--preview', 'bat --style=numbers --color=always --pager=never {}']}, <bang>0)
+let g:fzf_files_options=['--preview', 'bat --style=numbers --color=always --pager=never {}']
 
 " Shortcut for opening files
-map <C-p> :Files<CR>
+map <C-p> :GFiles<CR>
 nmap <leader>; :Buffers<CR>
 
 " Save file

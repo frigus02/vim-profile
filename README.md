@@ -13,7 +13,7 @@ ln -s "$HOME/Projects/vim-profile" "$HOME/.config/nvim"
 Install dependencies:
 
 ```sh
-brew install bat node
+brew install bat node ripgrep
 ```
 
 ### Windows
@@ -28,7 +28,7 @@ mklink /D nvim C:\code\vim-profile
 Install dependencies:
 
 ```
-scoop install bat
+scoop install bat ripgrep
 ```
 
 ## Initial configuration
@@ -42,5 +42,11 @@ scoop install bat
 - Install coc extensions:
 
   ```
-  :CocInstall coc-rust-analyzer
+  :CocInstall coc-rust-analyzer coc-tsserver
+  ```
+
+- Configure fzf default command to respect .gitignore. For this set the following environment variable:
+
+  ```
+  export FZF_DEFAULT_COMMAND='rg --files'
   ```

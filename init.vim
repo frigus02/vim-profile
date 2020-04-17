@@ -10,6 +10,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
 Plug 'joshdick/onedark.vim'
+Plug 'PProvost/vim-ps1'
 call plug#end()
 
 " ===============================================
@@ -69,11 +70,18 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.='\(^\|\s\s\)\zs\.\S\+'
 
-" Preview for fzf using bat, which works on Windows
-let g:fzf_files_options=['--preview', 'bat --style=numbers --color=always --pager=never {}']
+" Preview for fzf
+let s:is_win = has('win32') || has('win64')
+function! s:win_preview()
+	return {'options': ['--preview', 'powershell -NoProfile -File '.stdpath('config').'\scripts\preview.ps1 {}']}
+endfunction
+if s:is_win
+	command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, s:win_preview(), <bang>0)
+	command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, s:win_preview(), <bang>0)
+endif
 
 " Shortcut for opening files
-map <C-p> :GFiles<CR>
+map <C-p> :Files<CR>
 nmap <leader>; :Buffers<CR>
 
 " Save file
@@ -95,6 +103,10 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
+
+" Stop highlighting search
+vnoremap <C-h> :nohlsearch<cr>
+nnoremap <C-h> :nohlsearch<cr>
 
 " Lightline config
 let g:lightline={'colorscheme': 'onedark'}

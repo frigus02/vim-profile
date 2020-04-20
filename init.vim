@@ -94,8 +94,8 @@ nmap <leader>w :w<CR>
 nmap <leader>l :set list!<CR>
 
 " Jump to start and end of line using the home row keys
-map H ^
-map L $
+"map H ^
+"map L $
 
 " No arrow keys (force myself to use the home row)
 nnoremap <up> <nop>

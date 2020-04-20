@@ -70,8 +70,11 @@ let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.='\(^\|\s\s\)\zs\.\S\+'
 
+" OS detection
+let s:is_win = has('win32')
+let s:is_mac = has('osx') " or: gui_mac, mac, macunix, osxdarwin
+
 " Preview for fzf
-let s:is_win = has('win32') || has('win64')
 function! s:win_preview()
 	return {'options': ['--preview', 'powershell -NoProfile -File '.stdpath('config').'\scripts\preview.ps1 {}']}
 endfunction
@@ -107,6 +110,14 @@ inoremap <right> <nop>
 " Stop highlighting search
 vnoremap <C-h> :nohlsearch<cr>
 nnoremap <C-h> :nohlsearch<cr>
+
+" Open files and folders
+if s:is_win
+	nmap <leader>project :cd C:\code\
+elseif s:is_mac
+	nmap <leader>project :cd ~/Projects/
+	nmap <leader>notes :e ~/Downloads/notes/
+endif
 
 " Lightline config
 let g:lightline={'colorscheme': 'onedark'}

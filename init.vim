@@ -9,7 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'itchyny/lightline.vim'
-Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'PProvost/vim-ps1'
 call plug#end()
 
@@ -53,7 +53,8 @@ set wildoptions=pum,tagfile
 " ===============================================
 " Editor settings
 " ===============================================
-colorscheme onedark
+let g:dracula_colorterm = 0
+colorscheme dracula
 set listchars=tab:▸\ ,space:·
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 set hidden
@@ -120,7 +121,7 @@ elseif s:is_mac
 endif
 
 " Lightline config
-let g:lightline={'colorscheme': 'onedark'}
+let g:lightline={'colorscheme': 'dracula'}
 
 " ===============================================
 " Recommended for coc.nvim

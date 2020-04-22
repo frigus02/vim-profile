@@ -65,6 +65,8 @@ set nojoinspaces
 set relativenumber
 set number
 set mouse=a
+set splitbelow
+set splitright
 let g:netrw_banner=0
 let g:netrw_altv=1
 let g:netrw_liststyle=3

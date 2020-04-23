@@ -4,13 +4,19 @@ let mapleader = "\<Space>"
 " Plugins
 " ===============================================
 call plug#begin()
+" Format settings
 Plug 'editorconfig/editorconfig-vim'
+" Fuzzy finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+" Language support
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'PProvost/vim-ps1'
+" Visual stuff
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'PProvost/vim-ps1'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " ===============================================

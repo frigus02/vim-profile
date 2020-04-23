@@ -3,21 +3,23 @@ let mapleader = "\<Space>"
 " ===============================================
 " Plugins
 " ===============================================
-call plug#begin()
+packadd minpac
+call minpac#init()
+call minpac#add('k-takata/minpac', { 'type': 'opt' })
 " Format settings
-Plug 'editorconfig/editorconfig-vim'
+call minpac#add('editorconfig/editorconfig-vim')
 " Fuzzy finder
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() } })
+call minpac#add('junegunn/fzf.vim')
 " Language support
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'PProvost/vim-ps1'
+call minpac#add('neoclide/coc.nvim', { 'branch': 'release' })
+call minpac#add('PProvost/vim-ps1')
 " Visual stuff
-Plug 'itchyny/lightline.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'PProvost/vim-ps1'
-Plug 'machakann/vim-highlightedyank'
-call plug#end()
+call minpac#add('itchyny/lightline.vim')
+call minpac#add('dracula/vim', { 'name': 'dracula' })
+packadd! dracula " see https://github.com/dracula/vim/issues/143#issuecomment-500546548
+call minpac#add('PProvost/vim-ps1')
+call minpac#add('machakann/vim-highlightedyank')
 
 " ===============================================
 " Neovim default settings (:help nvim-defaults)
@@ -29,7 +31,9 @@ set autoread
 set background=dark
 set backspace=indent,eol,start
 set belloff=all
-set nocompatible
+if &compatible
+	set nocompatible
+endif
 set complete-=i
 set cscopeverbose
 set display=lastline,msgsep

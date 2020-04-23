@@ -33,20 +33,26 @@ scoop install bat ripgrep
 
 ## Initial configuration
 
-- Install plugins (vim-plug):
+- Configure fzf default command to respect .gitignore. For this set the following environment variable:
 
   ```
-  :PlugInstall
+  export FZF_DEFAULT_COMMAND='rg --files'
+  ```
+
+- Install minpac package manager:
+
+  ```sh
+  git clone https://github.com/k-takata/minpac.git pack/minpac/opt/minpac
+  ```
+
+- Install plugins (minpac):
+
+  ```
+  call minpac#update()
   ```
 
 - Install coc extensions:
 
   ```
   :CocInstall coc-rust-analyzer coc-tsserver
-  ```
-
-- Configure fzf default command to respect .gitignore. For this set the following environment variable:
-
-  ```
-  export FZF_DEFAULT_COMMAND='rg --files'
   ```

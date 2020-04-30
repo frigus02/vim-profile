@@ -135,7 +135,16 @@ elseif s:is_mac
 endif
 
 " Lightline config
-let g:lightline={'colorscheme': 'dracula'}
+let g:lightline = {
+	\ 'colorscheme': 'dracula',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ 'component': {
+	\   'gitbranch': '%{FugitiveHead(11)}'
+	\ },
+	\ }
 
 " ===============================================
 " Recommended for coc.nvim

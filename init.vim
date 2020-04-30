@@ -20,6 +20,8 @@ call minpac#add('dracula/vim', { 'name': 'dracula' })
 packadd! dracula " see https://github.com/dracula/vim/issues/143#issuecomment-500546548
 call minpac#add('PProvost/vim-ps1')
 call minpac#add('machakann/vim-highlightedyank')
+" Git
+call minpac#add('tpope/vim-fugitive')
 
 " ===============================================
 " Neovim default settings (:help nvim-defaults)

@@ -22,6 +22,8 @@ call minpac#add('PProvost/vim-ps1')
 call minpac#add('machakann/vim-highlightedyank')
 " Git
 call minpac#add('tpope/vim-fugitive')
+" Navigating
+call minpac#add('tpope/vim-unimpaired')
 
 " ===============================================
 " Neovim default settings (:help nvim-defaults)
@@ -105,9 +107,6 @@ nmap <leader>; :Buffers<CR>
 " Save file
 nmap <leader>w :w<CR>
 
-" Toggle whitespace
-nmap <leader>l :set list!<CR>
-
 " Jump to start and end of line using the home row keys
 "map H ^
 "map L $
@@ -121,10 +120,6 @@ nnoremap <left> <nop>
 nnoremap <right> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
-
-" Stop highlighting search
-vnoremap <C-h> :nohlsearch<cr>
-nnoremap <C-h> :nohlsearch<cr>
 
 " Open files and folders
 if s:is_win

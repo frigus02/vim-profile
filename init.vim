@@ -18,7 +18,6 @@ call minpac#add('PProvost/vim-ps1')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('dracula/vim', { 'name': 'dracula' })
 packadd! dracula " see https://github.com/dracula/vim/issues/143#issuecomment-500546548
-call minpac#add('PProvost/vim-ps1')
 call minpac#add('machakann/vim-highlightedyank')
 " Git
 call minpac#add('tpope/vim-fugitive')
@@ -103,7 +102,11 @@ endif
 " Shortcut for opening files
 nmap <C-p> :Files<CR>
 nmap <leader>; :Buffers<CR>
-nnoremap <leader>e :e <C-R>=expand("%:h")."/"<CR>
+if s:is_win
+	nnoremap <leader>e :e <C-R>=expand("%:h")."\\"<CR>
+else
+	nnoremap <leader>e :e <C-R>=expand("%:h")."/"<CR>
+endif
 
 " Save file
 nmap <leader>w :w<CR>

@@ -101,8 +101,9 @@ if s:is_win
 endif
 
 " Shortcut for opening files
-map <C-p> :Files<CR>
+nmap <C-p> :Files<CR>
 nmap <leader>; :Buffers<CR>
+nnoremap <leader>e :e <C-R>=expand("%:h")."/"<CR>
 
 " Save file
 nmap <leader>w :w<CR>

@@ -107,10 +107,6 @@ nmap <leader>; :Buffers<CR>
 " Save file
 nmap <leader>w :w<CR>
 
-" Jump to start and end of line using the home row keys
-"map H ^
-"map L $
-
 " No arrow keys (force myself to use the home row)
 nnoremap <up> <nop>
 nnoremap <down> <nop>
@@ -134,10 +130,11 @@ let g:lightline = {
 	\ 'colorscheme': 'dracula',
 	\ 'active': {
 	\   'left': [ [ 'mode', 'paste' ],
-	\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+	\             [ 'gitbranch', 'cocstatus', 'readonly', 'relativepath', 'modified' ] ]
 	\ },
-	\ 'component': {
-	\   'gitbranch': '%{FugitiveHead(11)}'
+	\ 'component_function': {
+	\   'gitbranch': 'FugitiveHead',
+	\   'cocstatus': 'coc#status',
 	\ },
 	\ }
 

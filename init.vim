@@ -14,6 +14,8 @@ call minpac#add('junegunn/fzf.vim')
 " Language support
 call minpac#add('neoclide/coc.nvim', { 'branch': 'release' })
 call minpac#add('PProvost/vim-ps1')
+call minpac#add('godlygeek/tabular')
+call minpac#add('plasticboy/vim-markdown')
 " Visual stuff
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('dracula/vim', { 'name': 'dracula' })
@@ -23,6 +25,7 @@ call minpac#add('machakann/vim-highlightedyank')
 call minpac#add('tpope/vim-fugitive')
 " Navigating
 call minpac#add('tpope/vim-unimpaired')
+call minpac#add('tpope/vim-surround')
 
 " ===============================================
 " Neovim default settings (:help nvim-defaults)
@@ -98,6 +101,12 @@ if s:is_win
 	command! -bang -nargs=? -complete=dir Files call fzf#vim#files(<q-args>, s:win_preview(), <bang>0)
 	command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, s:win_preview(), <bang>0)
 endif
+
+" Markdown
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_auto_insert_bullets = 0
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_folding_style_pythonic = 1
 
 " Shortcut for opening files
 nmap <C-p> :Files<CR>

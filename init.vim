@@ -24,6 +24,7 @@ call minpac#add('machakann/vim-highlightedyank')
 " Git
 call minpac#add('tpope/vim-fugitive')
 " Navigating
+call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-surround')
 

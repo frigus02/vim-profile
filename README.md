@@ -36,7 +36,7 @@ scoop install bat ripgrep
 - Configure fzf default command to respect .gitignore. For this set the following environment variable:
 
   ```
-  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --iglob !.git'
   ```
 
 - Install minpac package manager:

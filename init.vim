@@ -16,6 +16,7 @@ call minpac#add('neoclide/coc.nvim', { 'branch': 'release' })
 call minpac#add('PProvost/vim-ps1')
 call minpac#add('godlygeek/tabular')
 call minpac#add('plasticboy/vim-markdown')
+call minpac#add('cespare/vim-toml')
 " Visual stuff
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('dracula/vim', { 'name': 'dracula' })

@@ -3,4 +3,6 @@ augroup filetypedetect
 	autocmd Filetype gitcommit setlocal spell textwidth=72 colorcolumn=73
 	" Markdown files work better with spaces
 	autocmd Filetype markdown setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+	" YAML files work better with spaces
+	autocmd Filetype yaml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 augroup END

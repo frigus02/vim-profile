@@ -28,6 +28,7 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('tpope/vim-surround')
+call minpac#add('vim-scripts/argtextobj.vim')
 
 " ===============================================
 " Neovim default settings (:help nvim-defaults)

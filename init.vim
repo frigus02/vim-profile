@@ -232,6 +232,6 @@ command! -nargs=0 Format :call CocAction('format')
 nmap <leader>f :Format<CR>
 
 " Map keys to make commands usable on a german keyboard
-nmap <silent> ög [g
-nmap <silent> äg ]g
+nmap <silent> ö [
+nmap <silent> ä ]
 nmap <silent> <leader>, <leader>;

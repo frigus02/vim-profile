@@ -17,6 +17,8 @@ call minpac#add('PProvost/vim-ps1')
 call minpac#add('godlygeek/tabular')
 call minpac#add('plasticboy/vim-markdown')
 call minpac#add('cespare/vim-toml')
+call minpac#add('leafgarland/typescript-vim')
+call minpac#add('peitalin/vim-jsx-typescript')
 " Visual stuff
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('dracula/vim', { 'name': 'dracula' })

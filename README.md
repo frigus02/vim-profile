@@ -56,3 +56,10 @@ scoop install bat ripgrep
   ```
   :CocInstall coc-rust-analyzer coc-tsserver
   ```
+
+- If you're using `coc-java` you can add Lombok support like so:
+
+  ```
+  mkdir -p /usr/local/opt/lombok/
+  curl -L https://projectlombok.org/downloads/lombok.jar -o /usr/local/opt/lombok/lombok.jar
+  ```

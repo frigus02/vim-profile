@@ -80,6 +80,8 @@ set listchars=tab:▸\ ,space:·
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 set hidden
 set noshowmode
+set ignorecase
+set smartcase
 set scrolloff=2
 set sidescrolloff=5
 set nojoinspaces

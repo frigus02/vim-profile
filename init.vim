@@ -3,35 +3,46 @@ let mapleader = "\<Space>"
 " ===============================================
 " Plugins
 " ===============================================
-packadd minpac
-call minpac#init()
-call minpac#add('k-takata/minpac', { 'type': 'opt' })
-" Format settings
-call minpac#add('editorconfig/editorconfig-vim')
-" Fuzzy finder
-call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() } })
-call minpac#add('junegunn/fzf.vim')
-" Language support
-call minpac#add('neoclide/coc.nvim', { 'branch': 'release' })
-call minpac#add('PProvost/vim-ps1')
-call minpac#add('godlygeek/tabular')
-call minpac#add('plasticboy/vim-markdown')
-call minpac#add('cespare/vim-toml')
-call minpac#add('leafgarland/typescript-vim')
-call minpac#add('peitalin/vim-jsx-typescript')
-call minpac#add('udalov/kotlin-vim')
-" Visual stuff
-call minpac#add('itchyny/lightline.vim')
-call minpac#add('dracula/vim', { 'name': 'dracula' })
-packadd! dracula " see https://github.com/dracula/vim/issues/143#issuecomment-500546548
-call minpac#add('machakann/vim-highlightedyank')
-" Git
-call minpac#add('tpope/vim-fugitive')
-" Navigating
-call minpac#add('tpope/vim-repeat')
-call minpac#add('tpope/vim-unimpaired')
-call minpac#add('tpope/vim-surround')
-call minpac#add('vim-scripts/argtextobj.vim')
+function! PackInit() abort
+	packadd minpac
+
+	call minpac#init()
+	call minpac#add('k-takata/minpac', { 'type': 'opt' })
+
+	" Format settings
+	call minpac#add('editorconfig/editorconfig-vim')
+
+	" Fuzzy finder
+	call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() } })
+	call minpac#add('junegunn/fzf.vim')
+
+	" Language support
+	call minpac#add('neoclide/coc.nvim', { 'branch': 'release' })
+	call minpac#add('PProvost/vim-ps1')
+	call minpac#add('godlygeek/tabular')
+	call minpac#add('plasticboy/vim-markdown')
+	call minpac#add('cespare/vim-toml')
+	call minpac#add('leafgarland/typescript-vim')
+	call minpac#add('peitalin/vim-jsx-typescript')
+	call minpac#add('udalov/kotlin-vim')
+
+	" Visual stuff
+	call minpac#add('itchyny/lightline.vim')
+	call minpac#add('dracula/vim', { 'name': 'dracula' })
+	call minpac#add('machakann/vim-highlightedyank')
+
+	" Git
+	call minpac#add('tpope/vim-fugitive')
+
+	" Navigating
+	call minpac#add('tpope/vim-repeat')
+	call minpac#add('tpope/vim-unimpaired')
+	call minpac#add('tpope/vim-surround')
+	call minpac#add('vim-scripts/argtextobj.vim')
+endfunction
+command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
+command! PackClean source $MYVIMRC | call PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
 
 " ===============================================
 " Neovim default settings (:help nvim-defaults)
@@ -75,6 +86,7 @@ set wildoptions=pum,tagfile
 " ===============================================
 " Editor settings
 " ===============================================
+packadd! dracula " see https://github.com/dracula/vim/issues/143#issuecomment-500546548
 colorscheme dracula
 set listchars=tab:▸\ ,space:·
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab

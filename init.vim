@@ -21,10 +21,11 @@ function! PackInit() abort
 	call minpac#add('PProvost/vim-ps1')
 	call minpac#add('godlygeek/tabular')
 	call minpac#add('plasticboy/vim-markdown')
-	call minpac#add('cespare/vim-toml')
-	call minpac#add('leafgarland/typescript-vim')
-	call minpac#add('peitalin/vim-jsx-typescript')
-	call minpac#add('udalov/kotlin-vim')
+	call minpac#add('nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'type': 'opt' })
+	call minpac#add('cespare/vim-toml', { 'type': 'opt' })
+	call minpac#add('leafgarland/typescript-vim', { 'type': 'opt' })
+	call minpac#add('peitalin/vim-jsx-typescript', { 'type': 'opt' })
+	call minpac#add('udalov/kotlin-vim', { 'type': 'opt' })
 
 	" Visual stuff
 	call minpac#add('itchyny/lightline.vim')
@@ -252,3 +253,36 @@ nmap <leader>f :Format<CR>
 nmap <silent> ö [
 nmap <silent> ä ]
 nmap <silent> <leader>, <leader>;
+
+" ===============================================
+" nvim-treesitter
+" ===============================================
+if has('nvim-0.5.0')
+	packadd nvim-treesitter
+	lua <<EOF
+	require'nvim-treesitter.configs'.setup {
+		ensure_installed = "maintained",
+		highlight = {
+			enable = true,
+			disable = { "yaml" },
+		},
+		incremental_selection = {
+			enable = true,
+			keymaps = {
+				init_selection = "gnn",
+				node_incremental = "grn",
+				scope_incremental = "grc",
+				node_decremental = "grm",
+			},
+		},
+		indent = {
+			enable = true,
+		},
+	}
+EOF
+else
+	packadd vim-toml
+	packadd typescript-vim
+	packadd vim-jsx-typescript
+	packadd kotlin-vim
+endif

@@ -269,10 +269,10 @@ if has('nvim-0.5.0')
 		incremental_selection = {
 			enable = true,
 			keymaps = {
-				init_selection = "gnn",
-				node_incremental = "grn",
-				scope_incremental = "grc",
-				node_decremental = "grm",
+				init_selection = "gss",
+				node_incremental = "gsi",
+				scope_incremental = "gsp",
+				node_decremental = "gsd",
 			},
 		},
 		indent = {

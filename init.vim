@@ -40,6 +40,9 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-unimpaired')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('vim-scripts/argtextobj.vim')
+
+	" File system
+	call minpac#add('tpope/vim-eunuch')
 endfunction
 command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
 command! PackClean source $MYVIMRC | call PackInit() | call minpac#clean()

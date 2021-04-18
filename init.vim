@@ -260,7 +260,7 @@ nmap <silent> <leader>, <leader>;
 " ===============================================
 " nvim-treesitter
 " ===============================================
-if has('nvim-0.5.0') && !s:is_win
+if has('nvim-0.5.0')
 	packadd nvim-treesitter
 	lua <<EOF
 	require'nvim-treesitter.configs'.setup {

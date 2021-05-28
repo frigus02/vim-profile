@@ -40,6 +40,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-unimpaired')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('vim-scripts/argtextobj.vim')
+	call minpac#add('tpope/vim-speeddating')
 
 	" File system
 	call minpac#add('tpope/vim-eunuch')

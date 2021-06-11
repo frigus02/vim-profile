@@ -291,3 +291,32 @@ else
 	packadd vim-jsx-typescript
 	packadd kotlin-vim
 endif
+
+" ===============================================
+" Clipboard support for WSL
+" requires win32yank.exe in PATH on Linux in WSL
+" ===============================================
+function! s:is_wsl()
+	if has("unix")
+		let lines = readfile("/proc/version")
+		if lines[0] =~ "Microsoft"
+			return 1
+		endif
+	endif
+endfunction
+
+if s:is_wsl()
+	set clipboard+=unnamedplus
+	let g:clipboard = {
+		\ 'name': 'win32yank-wsl',
+		\ 'copy': {
+		\   '+': 'win32yank.exe -i --crlf',
+		\   '*': 'win32yank.exe -i --crlf',
+		\ },
+		\ 'paste': {
+		\   '+': 'win32yank.exe -o --lf',
+		\   '*': 'win32yank.exe -o --lf',
+		\ },
+		\ 'cache_enabled': 0,
+		\ }
+endif

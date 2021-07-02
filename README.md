@@ -31,6 +31,8 @@ Install dependencies:
 scoop install bat ripgrep
 ```
 
+In WSL, download and add [win32yank.exe](https://github.com/equalsraf/win32yank) to the PATH to enable system clipboard integration. See also [Neovim Wiki](https://github.com/neovim/neovim/wiki/FAQ#how-to-use-the-windows-clipboard-from-wsl).
+
 ## Initial configuration
 
 - Configure fzf default command to respect .gitignore. For this set the following environment variable:

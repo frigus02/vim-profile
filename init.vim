@@ -26,7 +26,6 @@ function! PackInit() abort
 	" Visual stuff
 	call minpac#add('itchyny/lightline.vim')
 	call minpac#add('dracula/vim', { 'name': 'dracula' })
-	call minpac#add('machakann/vim-highlightedyank')
 
 	" Git
 	call minpac#add('tpope/vim-fugitive')
@@ -115,6 +114,9 @@ let g:netrw_list_hide.='\(^\|\s\s\)\zs\.\S\+'
 " OS detection
 let s:is_win = has('win32')
 let s:is_mac = has('osx') " or: gui_mac, mac, macunix, osxdarwin
+
+" Highlight selection on yank
+au TextYankPost * silent! lua vim.highlight.on_yank()
 
 " Preview for fzf
 function! s:win_preview()

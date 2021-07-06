@@ -2,6 +2,12 @@
 
 ## Installation
 
+Create init.vim:
+
+```
+cp init.vim.sample init.vim
+```
+
 ### macOS
 
 Symlink config directory (assuming the repository is cloned at `$HOME/Projects/vim-profile`):

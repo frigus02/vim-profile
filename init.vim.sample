@@ -1,0 +1,22 @@
+" Defaults
+source _defaults.vim
+
+" Plugins
+packadd fzf
+packadd fzf.vim
+source _plugin_fzf.vim
+
+packadd coc.nvim
+source _plugin_coc.vim
+
+packadd lightline.vim
+source _plugin_lightline.vim
+
+packadd vim-ps1
+packadd tabular
+packadd vim-markdown
+source _plugin_markdown.vim
+packadd nvim-treesitter
+source _plugin_treesitter.vim
+
+packadd vim-fugitive

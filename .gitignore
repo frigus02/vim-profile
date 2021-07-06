@@ -1,3 +1,4 @@
 pack/
 spell/*.spl
 .netrwhist
+init.vim

@@ -40,6 +40,9 @@ function! PackInit() abort
 
 	" File system
 	call minpac#add('tpope/vim-eunuch')
+
+	" Clipboard over SSH
+	call minpac#add('ojroques/vim-oscyank', { 'type': 'opt' })
 endfunction
 command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
 command! PackClean source $MYVIMRC | call PackInit() | call minpac#clean()

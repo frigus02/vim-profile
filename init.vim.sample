@@ -1,22 +1,27 @@
+function! s:source_local(relative_path)
+  let full_path = fnamemodify($MYVIMRC, ':p:h') . '/'. a:relative_path
+  exec 'source ' . full_path
+endfunction
+
 " Defaults
-source _defaults.vim
+call s:source_local('_defaults.vim')
 
 " Plugins
 packadd fzf
 packadd fzf.vim
-source _plugin_fzf.vim
+call s:source_local('_plugin_fzf.vim')
 
 packadd coc.nvim
-source _plugin_coc.vim
+call s:source_local('_plugin_coc.vim')
 
 packadd lightline.vim
-source _plugin_lightline.vim
+call s:source_local('_plugin_lightline.vim')
 
 packadd vim-ps1
 packadd tabular
 packadd vim-markdown
-source _plugin_markdown.vim
+call s:source_local('_plugin_markdown.vim')
 packadd nvim-treesitter
-source _plugin_treesitter.vim
+call s:source_local('_plugin_treesitter.vim')
 
 packadd vim-fugitive

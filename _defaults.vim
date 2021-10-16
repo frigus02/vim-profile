@@ -90,8 +90,6 @@ set wildoptions=pum,tagfile
 " ===============================================
 " Editor settings
 " ===============================================
-packadd! dracula " see https://github.com/dracula/vim/issues/143#issuecomment-500546548
-colorscheme dracula
 set listchars=tab:▸\ ,space:·
 set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
 set hidden
@@ -113,6 +111,12 @@ let g:netrw_altv=1
 let g:netrw_liststyle=3
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.='\(^\|\s\s\)\zs\.\S\+'
+
+packadd! dracula " see https://github.com/dracula/vim/issues/143#issuecomment-500546548
+if exists('$TMUX')
+	let g:dracula_colorterm = 0
+endif
+colorscheme dracula
 
 " Highlight selection on yank
 au TextYankPost * silent! lua vim.highlight.on_yank()

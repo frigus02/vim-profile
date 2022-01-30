@@ -9,6 +9,9 @@ set signcolumn=yes
 " Delay highlight idendifier under cursor (in milliseconds).
 let g:Illuminate_delay = 300
 
+" Close quickfix list after selecting an entry.
+autocmd FileType qf nnoremap <buffer> <leader><CR> <CR>:cclose<CR>
+
 lua <<EOF
 local lspconfig = require('lspconfig')
 local illuminate = require('illuminate')

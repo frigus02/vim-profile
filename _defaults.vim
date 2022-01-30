@@ -17,7 +17,9 @@ function! PackInit() abort
 	call minpac#add('junegunn/fzf.vim', { 'type': 'opt' })
 
 	" Language support
-	call minpac#add('neoclide/coc.nvim', { 'branch': 'release', 'type': 'opt' })
+	call minpac#add('neovim/nvim-lspconfig', { 'type': 'opt' })
+	call minpac#add('nvim-lua/lsp-status.nvim', { 'type': 'opt' })
+	call minpac#add('RRethy/vim-illuminate', { 'type': 'opt' })
 	call minpac#add('PProvost/vim-ps1', { 'type': 'opt' })
 	call minpac#add('godlygeek/tabular', { 'type': 'opt' })
 	call minpac#add('plasticboy/vim-markdown', { 'type': 'opt' })

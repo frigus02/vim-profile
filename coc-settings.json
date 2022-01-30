@@ -1,4 +1,0 @@
-{
-	"rust-analyzer.checkOnSave.command": "clippy",
-	"java.jdt.ls.vmargs": "-javaagent:/usr/local/opt/lombok/lombok.jar"
-}

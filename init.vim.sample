@@ -8,7 +8,7 @@ call s:source_local('_defaults.vim')
 
 " Plugins
 call s:source_local('_plugin_fzf.vim')
-call s:source_local('_plugin_coc.vim')
+call s:source_local('_plugin_lsp.vim')
 call s:source_local('_plugin_lightline.vim')
 call s:source_local('_plugin_markdown.vim')
 call s:source_local('_plugin_treesitter.vim')

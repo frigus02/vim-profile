@@ -59,15 +59,15 @@ In WSL, download and add [win32yank.exe](https://github.com/equalsraf/win32yank)
   call minpac#update()
   ```
 
-- Install coc extensions:
+- Install language servers, e.g.:
 
   ```
-  :CocInstall coc-rust-analyzer coc-tsserver
-  ```
+  # tsserver
+  npm install -g typescript typescript-language-server
 
-- If you're using `coc-java` you can add Lombok support like so:
-
-  ```
-  mkdir -p /usr/local/opt/lombok/
-  curl -L https://projectlombok.org/downloads/lombok.jar -o /usr/local/opt/lombok/lombok.jar
+  # rust_analyzer
+  curl -LO https://github.com/rust-analyzer/rust-analyzer/releases/download/nightly/rust-analyzer-x86_64-unknown-linux-gnu.gz
+  gunzip rust-analyzer-*
+  chmod +x rust-analyzer-*
+  mv rust-analyzer-* ~/.local/bin/rust-analyzer
   ```

@@ -37,7 +37,6 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('vim-scripts/argtextobj.vim')
 	call minpac#add('tpope/vim-speeddating')
-	call minpac#add('justinmk/vim-sneak')
 
 	" File system
 	call minpac#add('tpope/vim-eunuch')

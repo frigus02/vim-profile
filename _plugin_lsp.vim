@@ -1,5 +1,9 @@
 packadd nvim-lspconfig
 packadd lsp-status.nvim
+packadd nvim-cmp
+packadd cmp-nvim-lsp
+packadd nvim-snippy
+packadd cmp-snippy
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -12,6 +16,13 @@ lua <<EOF
 local lspconfig = require('lspconfig')
 local illuminate = require('illuminate')
 local lsp_status = require('lsp-status')
+local cmp = require('cmp')
+local cmp_nvim_lsp = require('cmp_nvim_lsp')
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_extend('keep', capabilities, lsp_status.capabilities)
+capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+
 local opts = { noremap=true, silent=true }
 
 lsp_status.register_progress()
@@ -42,12 +53,44 @@ local on_attach = function(client, bufnr)
 end
 
 lspconfig.tsserver.setup({
-	capabilities = lsp_status.capabilities,
+	capabilities = capabilities,
 	on_attach = on_attach,
 })
 lspconfig.rust_analyzer.setup({
-	capabilities = lsp_status.capabilities,
+	capabilities = capabilities,
 	on_attach = on_attach,
 	settings = { ["rust-analyzer"] = { checkOnSave = { command = "clippy" } } },
+})
+
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			require('snippy').expand_snippet(args.body)
+		end,
+	},
+	mapping = {
+		['<C-p>'] = cmp.mapping.select_prev_item(),
+		['<C-n>'] = cmp.mapping.select_next_item(),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<CR>'] = cmp.mapping.confirm { select = false },
+		['<Tab>'] = function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			else
+				fallback()
+			end
+		end,
+		['<S-Tab>'] = function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			else
+				fallback()
+			end
+		end,
+	},
+	sources = {
+		{ name = 'nvim_lsp' },
+		{ name = 'snippy' },
+	},
 })
 EOF

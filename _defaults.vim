@@ -25,6 +25,12 @@ function! PackInit() abort
 	call minpac#add('nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'type': 'opt' })
 	call minpac#add('nvim-treesitter/nvim-treesitter-textobjects', { 'type': 'opt' })
 
+	" Autocomplete
+	call minpac#add('hrsh7th/nvim-cmp', { 'type': 'opt' })
+	call minpac#add('hrsh7th/cmp-nvim-lsp', { 'type': 'opt' })
+	call minpac#add('dcampos/nvim-snippy', { 'type': 'opt' })
+	call minpac#add('dcampos/cmp-snippy', { 'type': 'opt' })
+
 	" Visual stuff
 	call minpac#add('itchyny/lightline.vim', { 'type': 'opt' })
 	call minpac#add('dracula/vim', { 'name': 'dracula', 'type': 'opt' })

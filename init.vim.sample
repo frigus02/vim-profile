@@ -21,7 +21,9 @@ packadd vim-ps1
 packadd tabular
 packadd vim-markdown
 call s:source_local('_plugin_markdown.vim')
+
 packadd nvim-treesitter
+packadd nvim-treesitter-textsubjects
 call s:source_local('_plugin_treesitter.vim')
 
 packadd vim-fugitive

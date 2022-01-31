@@ -1,13 +1,9 @@
 packadd nvim-lspconfig
 packadd lsp-status.nvim
-packadd vim-illuminate
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
 set signcolumn=yes
-
-" Delay highlight idendifier under cursor (in milliseconds).
-let g:Illuminate_delay = 300
 
 " Close quickfix list after selecting an entry.
 autocmd FileType qf nnoremap <buffer> <leader><CR> <CR>:cclose<CR>
@@ -25,9 +21,6 @@ vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-
-vim.api.nvim_set_keymap('n', '[h', '<cmd>lua require"illuminate".next_reference{reverse=true,wrap=true}<CR>', opts)
-vim.api.nvim_set_keymap('n', ']h', '<cmd>lua require"illuminate".next_reference{wrap=true}<CR>', opts)
 
 local on_attach = function(client, bufnr)
 	-- Enable completion triggered by <c-x><c-o>

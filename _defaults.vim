@@ -19,7 +19,6 @@ function! PackInit() abort
 	" Language support
 	call minpac#add('neovim/nvim-lspconfig', { 'type': 'opt' })
 	call minpac#add('nvim-lua/lsp-status.nvim', { 'type': 'opt' })
-	call minpac#add('RRethy/vim-illuminate', { 'type': 'opt' })
 	call minpac#add('PProvost/vim-ps1', { 'type': 'opt' })
 	call minpac#add('godlygeek/tabular', { 'type': 'opt' })
 	call minpac#add('plasticboy/vim-markdown', { 'type': 'opt' })
@@ -38,6 +37,7 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-unimpaired')
 	call minpac#add('tpope/vim-surround')
 	call minpac#add('tpope/vim-speeddating')
+	call minpac#add('RRethy/vim-illuminate')
 
 	" File system
 	call minpac#add('tpope/vim-eunuch')
@@ -121,6 +121,11 @@ colorscheme dracula
 
 " Highlight selection on yank
 au TextYankPost * silent! lua vim.highlight.on_yank()
+
+" Delay highlight idendifier under cursor (in milliseconds).
+let g:Illuminate_delay = 300
+nnoremap [h :lua require"illuminate".next_reference{reverse=true,wrap=true}<CR>
+nnoremap ]h :lua require"illuminate".next_reference{wrap=true}<CR>
 
 " Shortcut for opening files
 if has('win32')

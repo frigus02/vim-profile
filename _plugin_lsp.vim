@@ -59,7 +59,12 @@ lspconfig.tsserver.setup({
 lspconfig.rust_analyzer.setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
-	settings = { ["rust-analyzer"] = { checkOnSave = { command = "clippy" } } },
+	settings = {
+		["rust-analyzer"] = {
+			checkOnSave = { command = "clippy" },
+			cargo = { allFeatures = true },
+		},
+	},
 })
 
 cmp.setup({

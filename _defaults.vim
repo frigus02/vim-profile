@@ -10,7 +10,7 @@ function! PackInit() abort
 	call minpac#add('k-takata/minpac', { 'type': 'opt' })
 
 	" Format settings
-	call minpac#add('editorconfig/editorconfig-vim')
+	call minpac#add('tpope/vim-sleuth')
 
 	" Fuzzy finder
 	call minpac#add('junegunn/fzf', { 'do': { -> fzf#install() }, 'type': 'opt' })

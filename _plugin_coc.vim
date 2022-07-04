@@ -1,3 +1,5 @@
+packadd coc.nvim
+
 " Give more space for displaying messages.
 set cmdheight=2
 

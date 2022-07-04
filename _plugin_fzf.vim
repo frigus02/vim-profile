@@ -1,3 +1,6 @@
+packadd fzf
+packadd fzf.vim
+
 " Preview for fzf
 function! s:win_preview()
 	return {'options': ['--preview', 'powershell -NoProfile -File '.stdpath('config').'\scripts\preview.ps1 {}']}

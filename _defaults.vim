@@ -22,7 +22,7 @@ function! PackInit() abort
 	call minpac#add('godlygeek/tabular', { 'type': 'opt' })
 	call minpac#add('plasticboy/vim-markdown', { 'type': 'opt' })
 	call minpac#add('nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'type': 'opt' })
-	call minpac#add('RRethy/nvim-treesitter-textsubjects', { 'type': 'opt' })
+	call minpac#add('nvim-treesitter/nvim-treesitter-textobjects', { 'type': 'opt' })
 
 	" Visual stuff
 	call minpac#add('itchyny/lightline.vim', { 'type': 'opt' })
@@ -35,7 +35,6 @@ function! PackInit() abort
 	call minpac#add('tpope/vim-repeat')
 	call minpac#add('tpope/vim-unimpaired')
 	call minpac#add('tpope/vim-surround')
-	call minpac#add('vim-scripts/argtextobj.vim')
 	call minpac#add('tpope/vim-speeddating')
 
 	" File system

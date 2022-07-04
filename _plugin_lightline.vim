@@ -1,3 +1,5 @@
+packadd lightline.vim
+
 let g:lightline = {
 	\ 'colorscheme': 'dracula',
 	\ 'active': {

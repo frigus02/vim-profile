@@ -1,3 +1,6 @@
+packadd nvim-treesitter
+packadd nvim-treesitter-textobjects
+
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
 	highlight = {
@@ -16,12 +19,19 @@ require'nvim-treesitter.configs'.setup {
 	indent = {
 		enable = true,
 	},
-	textsubjects = {
-		enable = true,
-		keymaps = {
-			['.'] = 'textsubjects-smart',
-			[';'] = 'textsubjects-container-outer',
-			['i;'] = 'textsubjects-container-inner',
+	textobjects = {
+		select = {
+			enable = true,
+			-- Automatically jump forward to textobj, similar to targets.vim
+			lookahead = true,
+			keymaps = {
+				["af"] = "@function.outer",
+				["if"] = "@function.inner",
+				["ac"] = "@class.outer",
+				["ic"] = "@class.inner",
+				["aa"] = "@parameter.outer",
+				["ia"] = "@parameter.inner",
+			},
 		},
 	},
 }

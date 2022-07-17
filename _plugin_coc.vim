@@ -38,9 +38,9 @@ else
 	imap <expr> <cr> pumvisible() ? "\<C-y>" : \<C-g>u\<CR>"
 endif
 
-" Use `[g` and `]g` to navigate diagnostics
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Use `[d` and `]d` to navigate diagnostics
+nmap <silent> [d <Plug>(coc-diagnostic-prev)
+nmap <silent> ]d <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -58,14 +58,11 @@ function! s:show_documentation()
 	endif
 endfunction
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap keys for applying codeAction to the current line.
-nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>ca <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
 nmap <leader>qf <Plug>(coc-fix-current)
 

@@ -61,7 +61,6 @@ if &compatible
 	set nocompatible
 endif
 set complete-=i
-set cscopeverbose
 set display=lastline,msgsep
 set encoding=utf-8
 set formatoptions=tcqj

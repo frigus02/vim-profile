@@ -129,6 +129,10 @@ endif
 " Save file
 nmap <leader>w :w<CR>
 
+" Move by 1 visual line when text is wrapped, except when count is given
+nnoremap <expr> j v:count ? 'j' : 'gj'
+nnoremap <expr> k v:count ? 'k' : 'gk'
+
 " No arrow keys (force myself to use the home row)
 nnoremap <up> <nop>
 nnoremap <down> <nop>

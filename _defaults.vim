@@ -104,11 +104,6 @@ set splitbelow
 set splitright
 set termguicolors
 "set title " disabled, because it seems to interfere with tmux?!
-let g:netrw_banner=0
-let g:netrw_altv=1
-let g:netrw_liststyle=3
-let g:netrw_list_hide=netrw_gitignore#Hide()
-let g:netrw_list_hide.='\(^\|\s\s\)\zs\.\S\+'
 
 packadd! dracula " see https://github.com/dracula/vim/issues/143#issuecomment-500546548
 if exists('$TMUX')

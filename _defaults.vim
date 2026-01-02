@@ -21,8 +21,8 @@ function! PackInit() abort
 	call minpac#add('PProvost/vim-ps1', { 'type': 'opt' })
 	call minpac#add('godlygeek/tabular', { 'type': 'opt' })
 	call minpac#add('plasticboy/vim-markdown', { 'type': 'opt' })
-	call minpac#add('nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate', 'type': 'opt' })
-	call minpac#add('nvim-treesitter/nvim-treesitter-textobjects', { 'type': 'opt' })
+	call minpac#add('nvim-treesitter/nvim-treesitter', { 'type': 'opt' })
+	call minpac#add('nvim-treesitter/nvim-treesitter-textobjects', { 'rev': 'main', 'type': 'opt' })
 
 	" Visual stuff
 	call minpac#add('itchyny/lightline.vim', { 'type': 'opt' })
